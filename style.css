@@ -1,0 +1,455 @@
+@charset "UTF-8";
+/*------------------------------
+共通部分*/
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 100%;
+}
+body{
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    line-height: 1.7;
+    color: #575555;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+.wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+ul{
+    list-style: none;
+}
+
+/*-----------------------------------
+firstnav*/
+.nav-bar{
+    background-color: #f7f7f7;
+    padding: 20px 0;
+    display: none;
+}
+.nav-bar ul{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    align-items: center;
+}
+.nav-bar ul li{
+    display: inline;
+    margin-left: 30px;
+}
+.nav-bar ul li a:hover{
+    color: #3393d8;
+    transition: 0.3s;
+}
+.nav-bar ul li a{
+    color: #666565;
+    font-size: 0.8rem;
+}
+.first-nav{
+    border-bottom: 1px solid #f0f0f0;
+    height: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.topbar{
+    font-size: 0.8rem;
+    color: #b6b3b3;
+    
+}
+/*-----------------------------------
+header*/
+
+
+.header-title{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: #424141;
+    letter-spacing: 0.3em;
+    font-size: 1.5rem;
+}
+.satoshi{
+    padding: 15px 0;
+}
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: #4daff5;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a:hover{
+    opacity: 0.5;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 30px;
+    top: 16px;
+}
+.menu-content {
+    width: 50%;
+    height: 50%;
+    position: fixed;
+    top: 0;
+    left: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color:#3393d8;
+    transition: all 0.5s;/*アニメーション設定*/
+}
+#menu-btn-check:checked ~ .menu-content {
+    left: 0;/*メニューを画面内へ*/
+}
+.mainnav{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.mainnav img{
+    height: 230px;
+    width: 80%;
+    
+}
+.name{
+    text-align: center;
+    color: #ffffff;
+    background-color: #3393d8;
+    font-size: 1.5rem;
+    padding: 10px 0;
+}
+
+.under{
+    background:linear-gradient(transparent 70%, #ffff00 0%);
+}
+.box a{
+   color: #575555;
+}
+.box a:hover{
+    color: #3393d8;
+    transition: 0.5s;
+}
+
+
+
+
+/*------------------------------
+main--------------------*/
+.main{
+    text-align: center;
+}
+.main-item{
+ border-bottom: 1px solid black;
+   margin-bottom: 25px;
+   padding:0 5%;
+}
+.main-txt {   
+    font-size: 0.9rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: initial;
+}
+.main-txt:last-child{
+    margin-bottom: 40px;
+}
+.txt-title{
+    text-align: initial;
+    margin-left: auto;
+    margin-right: auto;
+}
+.sub-title{
+    text-align: center;
+}
+.sec-title{
+    position: relative;
+  display: inline-block;
+  margin-bottom: 50px;
+}
+.sec-title::before{
+    content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -15px;/*線の上下位置*/
+  display: inline-block;
+  width: 30px;/*線の長さ*/
+  height: 5px;/*線の太さ*/
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);/*位置調整*/
+  background-color:#3393d8;/*線の色*/
+}
+.sub-item{
+    text-align: center;
+    padding: 0 5%;
+}
+.sub{
+    border-bottom: 1px solid black;
+}
+.sub-item p{
+    font-size: 0.9rem;
+    margin-bottom: 50px;
+}
+
+#font .main-txt{
+      opacity: 0.7;
+}
+
+
+
+
+
+
+/*************************
+footer**************/
+.contact{
+    padding: 0 5%;
+    font-weight: 200;
+}
+.contact ul li{
+    border-bottom: 1px solid #e7e7e7;
+    line-height: 2;
+    padding: 10px 0;
+}
+.contact ul{
+   padding-left: 10px;
+    
+}
+.header-last{
+    color: #ffffff;
+    background-color: rgb(36, 34, 34);
+    text-align: center;
+    font-size: 13px;
+    padding: 3px 0;
+}
+.header-last p{
+    opacity: 0.5;
+}
+iframe{
+    width: 100%;
+}
+.footer-sub{
+    background-color: #0f9ada;
+    color: #ffffff;
+    padding: 20px 0;
+    margin: 0%;
+}
+.footer-ad{
+    padding: 0 8%;
+}
+.snsbtniti2{
+    text-align: center;
+}
+.flowbtn11{
+    margin-left: 30px;
+}
+.fa-twitter{
+    color: #ffffff;
+}
+.fa-facebook-f{
+    color: #fdfdfd;
+}
+.fa-instagram{
+    color: #ffffff;
+}
+.snsbtniti2 a:hover{
+    opacity: 0.5;
+}
+
+.btn-square-little-rich {
+    position: relative;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: #03A9F4;/*色*/
+    border: solid 1px #0f9ada;/*線色*/
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  }
+
+  .sky {
+    background-image: url(../img/https___qiita-image-store.s3.amazonaws.com_0_127338_9a9b9358-35f8-9c95-69a8-3952b0e3aec3.png);
+    background-size: contain;
+    text-align: center;
+    padding: 9px 0;
+  }
+  .sky h3{
+     padding: 0 10%;
+     color:#246ca0;
+     line-height:1.3em;
+  }
+  .sky a:hover{
+      opacity: 0.8;
+  }
+  .form{
+      padding: 0 8%;
+      margin-bottom: 30px;
+  }
+  .form a:hover{
+      opacity: 0.5;
+  }
+
+  .btn-square-little-richs {
+    position: relative;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #03A9F4;
+    background: #ffffff;/*色*/
+    border: solid 1px #000000;/*線色*/
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    padding: 10px 30px;
+  }
+@media (min-width:600px){
+    .first-nav{
+        height: 30px;
+        text-align: left;
+    }
+    .topbar{
+        text-align: left;
+        padding-left: 60px;
+    }
+    .mainnav img{
+        width: 100%;
+        height: 400px;
+        background-size: cover;
+    }
+
+    
+    .main-item img{
+        width: 536px;
+        height: 357px;
+        padding-top: 25px;
+    }
+    .main-item{
+        display: flex;
+        height: 450px;
+        margin-top: 25px;
+        padding: 30px 0;
+        
+    }
+
+    .box{
+    
+        padding: 0 20px;
+        padding-bottom: 60px;
+    }
+
+    .main-item:nth-child(even){
+        flex-direction: row-reverse;
+    }
+    
+    .box:last-child{
+        padding-left: 50px;
+    }
+    .sub{
+        display: grid;
+        gap:26px;
+        grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      }
+    .nav-bar{
+        display: block;
+    }
+    .contact ul{
+        width: 60%;
+    }
+    .contact{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .sky{
+        background-size: contain;
+    }
+    .footer-sub{
+        display: flex;
+        justify-content: space-between;
+    }
+    .snsbtniti2{
+        width: 50%;
+        margin-top: 100px;
+        margin-right: 40px;
+    }
+    .flowbtn11{
+        margin-left: 30px;
+    }
+    .form{
+        width: 50%;
+        margin-top: 100px;
+    }
+    .footer-ad{
+        width: 50%;
+        padding: 0 10%;
+        margin-left: 30px;
+    }
+    
+
+}
