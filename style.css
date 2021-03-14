@@ -334,7 +334,7 @@ iframe{
   }
 
   .sky {
-    background-image: url(../img/https___qiita-image-store.s3.amazonaws.com_0_127338_9a9b9358-35f8-9c95-69a8-3952b0e3aec3.png);
+    background-image: url(https://github.com/satoking/fp/blob/main/https___qiita-image-store.s3.amazonaws.com_0_127338_9a9b9358-35f8-9c95-69a8-3952b0e3aec3.png?raw=true);
     background-size: contain;
     text-align: center;
     padding: 9px 0;
